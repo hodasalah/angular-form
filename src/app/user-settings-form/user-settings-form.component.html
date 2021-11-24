@@ -51,15 +51,14 @@
     </div>
     <select class="form-select form-group form-select-sm mb-3" aria-label=".form-select-lg example"
       name='subscriptionType' [(ngModel)]="userSettings.subscriptionType">
-      <option selected>Subscription Type</option>
-      <option value="1">Annual</option>
-      <option value="2">Monthly</option>
-      <option value="3">lifeTime</option>
+
+      <option *ngFor="let type of subscriptionTypes | async">{{type}}</option>
     </select>
     <div class="mb-3">
       <label for="notes" class="form-label">Notes</label>
       <textarea class="form-control" id="notes" rows="3" name='notes' [(ngModel)]="userSettings.notes"></textarea>
     </div>
+    <div class="alert alert-danger" [hidden]="!postError && form.invalid">{{postErrorMessage}}</div>
     <button class="btn btn-primary">Send</button>
   </form>
 </div>
