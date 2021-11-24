@@ -1,0 +1,8 @@
+/*these classes from ng-model if we want to show messages we had to use properties[valid invalid ..etc]*/
+
+/* .ng-invalid:not(form).ng-touched {
+  border: 1px solid red;
+} */
+.error-field {
+  border: 1px solid red;
+}
